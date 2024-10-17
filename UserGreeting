@@ -1,10 +1,16 @@
-// UserGreeting.jsx
-Function UserGreeting(props)
-{
-   if(props.isLoggedIn){
-      return <h1> Welcome , {props.name} </h1>
-   }
-   else{
-      return <h1> Please Login First </h1>
-   }
+// UserGreeting.jsx using class component
+import React, { Component } from 'react';
+
+class UserGreeting extends Component {
+    render() {
+        const { isLoggedIn, name } = this.props;
+
+        if (isLoggedIn) {
+            return <h1>Welcome {name}</h1>;
+        } else {
+            return <h1>Please log in first</h1>;
+        }
+    }
 }
+
+export default UserGreeting;
